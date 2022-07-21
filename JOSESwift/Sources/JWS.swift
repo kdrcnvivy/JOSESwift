@@ -127,7 +127,7 @@ public struct JWS {
             return false
         }
 
-        guard let verifier = Verifier(verifyingAlgorithm: alg, publicKey: publicKey) else {
+        guard let verifier = Verifier(verifyingAlgorithm: alg, key: publicKey) else {
             return false
         }
 
@@ -149,7 +149,7 @@ public struct JWS {
             throw JOSESwiftError.verifyingFailed(description: "Invalid header parameter.")
         }
 
-        guard let verifier = Verifier(verifyingAlgorithm: alg, publicKey: publicKey) else {
+        guard let verifier = Verifier(verifyingAlgorithm: alg, key: publicKey) else {
             throw JOSESwiftError.verifyingFailed(description: "Wrong key type.")
         }
 

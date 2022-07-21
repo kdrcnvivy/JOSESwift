@@ -51,12 +51,6 @@ public struct Signer<KeyType> {
     /// - Returns: A fully initialized `Signer` or `nil` if provided key is of the wrong type.
     public init?(signingAlgorithm: SignatureAlgorithm, key: KeyType) {
         switch signingAlgorithm {
-        case .HS256, .HS384, .HS512:
-            guard type(of: key) is HMACSigner.KeyType.Type else {
-                return nil
-            }
-            // swiftlint:disable:next force_cast
-            self.signer = HMACSigner(algorithm: signingAlgorithm, key: key as! HMACSigner.KeyType)
         case .RS256, .RS384, .RS512, .PS256, .PS384, .PS512:
             guard type(of: key) is RSASigner.KeyType.Type else {
                 return nil

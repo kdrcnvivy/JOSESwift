@@ -28,12 +28,6 @@ import Foundation
 ///
 /// See [RFC 7518, Section 3](https://tools.ietf.org/html/rfc7518#section-3).
 public enum SignatureAlgorithm: String {
-    /// HMAC using SHA-256
-    case HS256
-    /// HMAC using SHA-384
-    case HS384
-    /// HMAC using SHA-512
-    case HS512
     /// RSASSA-PKCS1-v1_5 using SHA-256
     case RS256
     /// RSASSA-PKCS1-v1_5 using SHA-384
@@ -93,15 +87,12 @@ public enum ContentEncryptionAlgorithm: String {
 /// - SHA256
 public enum HMACAlgorithm: String {
     case SHA512
-    case SHA384
     case SHA256
 
     var outputLength: Int {
         switch self {
         case .SHA512:
             return 64
-        case .SHA384:
-            return 48
         case .SHA256:
             return 32
         }

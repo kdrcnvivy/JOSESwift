@@ -34,8 +34,6 @@ fileprivate extension HMACAlgorithm {
         switch self {
         case .SHA512:
             return CCAlgorithm(kCCHmacAlgSHA512)
-        case .SHA384:
-            return CCAlgorithm(kCCHmacAlgSHA384)
         case .SHA256:
             return CCAlgorithm(kCCHmacAlgSHA256)
         }
@@ -43,7 +41,6 @@ fileprivate extension HMACAlgorithm {
 }
 
 internal struct HMAC {
-    typealias KeyType = Data
 
     /// Calculates a HMAC of an input with a specific HMAC algorithm and the corresponding HMAC key.
     ///
