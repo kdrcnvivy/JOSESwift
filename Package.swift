@@ -9,6 +9,6 @@ let package = Package(
     ],
     dependencies: [.package(url: "https://github.com/krzyzanowskim/CryptoSwift.git", .upToNextMajor(from: "1.5.1"))],
     targets: [
-        .target(name: "JOSESwift", dependencies: ["CryptoSwift"])
+        .target(name: "JOSESwift", dependencies: ["CryptoSwift"], path: "JOSESwift")
     ],
     swiftLanguageVersions: [.v5])
