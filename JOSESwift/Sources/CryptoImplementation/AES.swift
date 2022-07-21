@@ -23,7 +23,7 @@
 
 import Foundation
 import CommonCrypto
-import CryptoSwift
+@_implementationOnly import CryptoSwift
 
 internal enum AESError: Error {
     case keyLengthNotSatisfied

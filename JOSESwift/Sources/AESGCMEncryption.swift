@@ -6,7 +6,7 @@
 //
 
 import Foundation
-import CryptoSwift
+@_implementationOnly import CryptoSwift
 struct AESGCMEncryption {
     
     private let contentEncryptionAlgorithm: ContentEncryptionAlgorithm
